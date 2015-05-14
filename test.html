@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE HTML>
+<html lang = "zh-tw">
+	<head>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css_test.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+	<div><h1 id="retro">WeatherSong</h1></div>
+	<div id="weather"></div>
+	<div id="song">
+		<div class = "wrapper">
+			<div id = "songImg" class="cover">
+			</div>
+			<div class="songInfo">
+				<h2 class = "songtext" id="songName">SongName</h2>
+				<h2 class = "songtext" id="singer">Singer</h2>
+				<a href="#" class="songUrl" id="Url" onclick="openUrl()">URL</a>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<form id="search-form" >
+			<input type="text" id="query" value="" class="form-control" placeholder="Type an Artist Name"></input>
+			<input type="button" id="search" class="btn btn-primary btn-lg" value="Search"></input>
+		</form>
+		<div id="results"></div>
+	</div>
+	<script id="results-template" type="text/x-handlebars-template">
+		{{#each albums.items}}
+		<div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+		{{/each}}
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="handlebars-v3.0.3.js"></script>  
+	<script type="text/javascript" src="spotify-web-api.js"></script>
+	<script type="text/javascript" src="jquery.simpleWeather.js"></script>
+	<script type="text/javascript" src="js_test.js"></script>
+	<script type="text/javascript" src="searchKey.js"></script>
+	<script type="text/javascript" src="WeatherSearch.js"></script>
+	<script type="text/javascript" src="weather_simple.js"></script>
+</body>
+</html>
